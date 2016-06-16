@@ -17,10 +17,8 @@ class Main {
 	static int[][] readInput (String fileName) {
 		int[][] W = null;
 
-		try(BufferedReader br = new BufferedReader(new FileReader("graph.txt"))) {
-		    StringBuilder sb = new StringBuilder();
+		try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 		    int n = Integer.parseInt(br.readLine());
-
 			W = new int[n][n];
 
 			for (int i = 0; i < n; i++) {
@@ -58,7 +56,8 @@ class Main {
 					(x == comparator ?
 							(comparator == -1 ? "nil" : "INF")
 						:
-							x) + "\t"
+							x
+					) + "\t"
 				);
 			}
 			System.out.println("");
