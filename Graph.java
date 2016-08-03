@@ -19,10 +19,10 @@ class Graph {
 		int n = weights.length;
 
 		int[][] prev_D = weights;
-		int[][] next_D = null;
+		int[][] next_D = new int[n][n];
 
 		int[][] prev_PI = new int [n][n];
-		int[][] next_PI = null;
+		int[][] next_PI = new int [n][n];
 
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < n; j++)
@@ -33,8 +33,6 @@ class Graph {
 
 
 		for (int k = 0; k < n; k++) {
-			next_D = new int[n][n];
-			next_PI = new int[n][n];
 
 			for (int i = 0; i < n; i++)
 				for (int j = 0; j < n; j++) {
